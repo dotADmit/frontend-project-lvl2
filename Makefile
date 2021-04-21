@@ -5,7 +5,7 @@ publish:
 	npm publish --dry-run
 
 gendiff:
-	node bin/gendiff.js
+	node --experimental-json-modules bin/gendiff.js
 
 gl:
 	git log --oneline
