@@ -9,3 +9,6 @@ gendiff:
 
 gl:
 	git log --oneline
+
+lint:
+	npx eslint .
