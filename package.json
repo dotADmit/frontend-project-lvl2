@@ -21,7 +21,8 @@
   "type": "module",
   "homepage": "https://github.com/dotADmit/frontend-project-lvl2#readme",
   "dependencies": {
-    "commander": "^7.2.0"
+    "commander": "^7.2.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^7.24.0",
