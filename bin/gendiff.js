@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander/esm.mjs';
-import fs from 'fs';
+import { readFileSync } from 'fs';
 import diff from '../src/index.js';
 
 const program = new Command();
@@ -12,9 +12,9 @@ program
   .arguments('<filepath1> <filepath2>')
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'output format')
-  .action((path1, path2) => {
-    const a = fs.readFileSync(path1, 'utf8');
-    const b = fs.readFileSync(path2, 'utf8');
+  .action((filepath1, filepath2) => {
+    const a = readFileSync(filepath1, 'utf8');
+    const b = readFileSync(filepath2, 'utf8');
 
     console.log(diff(JSON.parse(a), JSON.parse(b)));
   });
