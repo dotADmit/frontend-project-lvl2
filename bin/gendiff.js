@@ -16,7 +16,7 @@ program
     const a = readFileSync(filepath1, 'utf8');
     const b = readFileSync(filepath2, 'utf8');
 
-    console.log(diff(JSON.parse(a), JSON.parse(b)));
+    console.log(diff(a, b));
   });
 
 program.parse(process.argv);

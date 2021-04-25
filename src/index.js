@@ -1,6 +1,9 @@
 import _ from 'lodash';
 
-export default (obj1, obj2) => {
+export default (path1, path2) => {
+  const obj1 = JSON.parse(path1);
+  const obj2 = JSON.parse(path2);
+
   const merged = _.merge({}, obj1, obj2);
 
   const props = Object.entries(merged).flatMap(([key, value]) => {
