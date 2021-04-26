@@ -22,6 +22,6 @@ const result = `{
 + verbose: true
 }`;
 
-test('test #1', () => {
+test('common work', () => {
   expect(diff(file1, file2)).toEqual(result);
 });
