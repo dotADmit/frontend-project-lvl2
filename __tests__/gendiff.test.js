@@ -1,17 +1,7 @@
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
 import diff from '../src/index.js';
-
-const file1 = `{
-    "host": "hexlet.io",
-    "timeout": 50,
-    "proxy": "123.234.53.22",
-    "follow": false
-}`;
-
-const file2 = `{
-    "timeout": 20,
-    "verbose": true,
-    "host": "hexlet.io"
-}`;
 
 const result = `{
 - follow: false
@@ -22,6 +12,14 @@ const result = `{
 + verbose: true
 }`;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+
+const a = readFileSync(getFixturePath('file1.json'), 'utf8');
+const b = readFileSync(getFixturePath('file2.json'), 'utf8');
+
 test('common work', () => {
-  expect(diff(file1, file2)).toEqual(result);
+  expect(diff(a, b)).toEqual(result);
 });
