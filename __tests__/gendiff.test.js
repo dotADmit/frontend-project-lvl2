@@ -16,9 +16,14 @@ const __dirname = path.dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const a = getFixturePath('file1.json');
-const b = getFixturePath('file2.json');
+test('common work json', () => {
+  const json1 = getFixturePath('file1.json');
+  const json2 = getFixturePath('file2.json');
+  expect(diff(json1, json2)).toEqual(result);
+});
 
-test('common work', () => {
-  expect(diff(a, b)).toEqual(result);
+test('common work yml', () => {
+  const yml1 = getFixturePath('file1.yaml');
+  const yml2 = getFixturePath('file2.yml');
+  expect(diff(yml1, yml2)).toEqual(result);
 });
