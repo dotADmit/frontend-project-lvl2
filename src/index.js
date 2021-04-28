@@ -1,8 +1,9 @@
 import _ from 'lodash';
+import parser from './parsers.js';
 
-export default (path1, path2) => {
-  const obj1 = JSON.parse(path1);
-  const obj2 = JSON.parse(path2);
+export default (filepath1, filepath2) => {
+  const obj1 = parser(filepath1);
+  const obj2 = parser(filepath2);
 
   const merged = _.merge({}, obj1, obj2);
 
