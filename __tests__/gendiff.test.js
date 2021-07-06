@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
-import diff from '../src/index.js';
+import gendiff from '../src/index.js';
 
 const result = `{
   - follow: false
@@ -64,17 +64,23 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 test('common work json', () => {
   const json1 = getFixturePath('file1.json');
   const json2 = getFixturePath('file2.json');
-  expect(diff(json1, json2)).toEqual(result);
+  expect(gendiff(json1, json2)).toEqual(result);
 });
 
 test('common work yml', () => {
   const yml1 = getFixturePath('file1.yaml');
   const yml2 = getFixturePath('file2.yml');
-  expect(diff(yml1, yml2)).toEqual(result);
+  expect(gendiff(yml1, yml2)).toEqual(result);
 });
 
 test('recursive work json', () => {
   const json1 = getFixturePath('file3.json');
   const json2 = getFixturePath('file4.json');
-  expect(diff(json1, json2)).toEqual(result2);
+  expect(gendiff(json1, json2)).toEqual(result2);
+});
+
+test('recursive work yml', () => {
+  const json1 = getFixturePath('file3.yaml');
+  const json2 = getFixturePath('file4.yml');
+  expect(gendiff(json1, json2)).toEqual(result2);
 });

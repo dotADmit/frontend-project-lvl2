@@ -9,3 +9,6 @@
 
 ##### test yml
 [![asciicast](https://asciinema.org/a/410373.svg)](https://asciinema.org/a/410373)
+
+##### recursive test
+[![asciicast](https://asciinema.org/a/424043.svg)](https://asciinema.org/a/424043)

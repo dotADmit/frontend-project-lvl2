@@ -1,6 +1,6 @@
 import stringify from '../utilites/stringify.js';
 
-const render = (nodes) => {
+const render = (ast) => {
   const iter = (node, space = 2) => {
     const indent = ' '.repeat(space);
     const indentBraces = ' '.repeat(space + 2);
@@ -23,11 +23,11 @@ const render = (nodes) => {
         throw new Error(`unexpected type ${type}`);
     }
   };
-  return iter(nodes);
+  return iter(ast);
 };
 
-const stylish = (nodes) => {
-  const lines = nodes.map(render);
+const stylish = (ast) => {
+  const lines = ast.map(render);
   return `{${lines.join('')}\n}`;
 };
 
