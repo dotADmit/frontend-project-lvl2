@@ -56,6 +56,18 @@ const result2 = `{
     }
 }`;
 
+const result3 = `Property 'common.follow' was added with value: false
+Property 'common.setting2' was removed
+Property 'common.setting3' was updated. From true to null
+Property 'common.setting4' was added with value: 'blah blah'
+Property 'common.setting5' was added with value: [complex value]
+Property 'common.setting6.doge.wow' was updated. From '' to 'so much'
+Property 'common.setting6.ops' was added with value: 'vops'
+Property 'group1.baz' was updated. From 'bas' to 'bars'
+Property 'group1.nest' was updated. From [complex value] to 'str'
+Property 'group2' was removed
+Property 'group3' was added with value: [complex value]`;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -83,4 +95,10 @@ test('recursive work yml', () => {
   const json1 = getFixturePath('file3.yaml');
   const json2 = getFixturePath('file4.yml');
   expect(gendiff(json1, json2)).toEqual(result2);
+});
+
+test('type plain work', () => {
+  const json1 = getFixturePath('file1.yaml');
+  const json2 = getFixturePath('file2.yml');
+  expect(gendiff(json1, json2, 'plain')).toEqual(result3);
 });

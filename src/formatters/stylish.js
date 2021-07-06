@@ -26,9 +26,7 @@ const render = (ast) => {
   return iter(ast);
 };
 
-const stylish = (ast) => {
+export default (ast) => {
   const lines = ast.map(render);
   return `{${lines.join('')}\n}`;
 };
-
-export default stylish;

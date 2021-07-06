@@ -15,10 +15,7 @@ const buildAST = (obj1, obj2) => {
     if (_.isEqual(value1, value2)) return { type: 'unchanged', key, value: value1 };
 
     return {
-      type: 'changed',
-      key,
-      oldValue: value1,
-      newValue: value2,
+      type: 'changed', key, oldValue: value1, newValue: value2,
     };
   });
 
