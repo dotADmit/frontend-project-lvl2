@@ -1,6 +1,6 @@
 import stringify from '../utilites/stringify.js';
 
-const render = (ast) => {
+const render = (diff) => {
   const iter = (node, space = 2) => {
     const indent = ' '.repeat(space);
     const indentBraces = ' '.repeat(space + 2);
@@ -23,7 +23,7 @@ const render = (ast) => {
         throw new Error(`unexpected type ${type}`);
     }
   };
-  return iter(ast);
+  return iter(diff);
 };
 
 export default (ast) => {

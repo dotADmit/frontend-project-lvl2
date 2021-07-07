@@ -98,7 +98,7 @@ test('recursive work yml', () => {
 });
 
 test('type plain work', () => {
-  const json1 = getFixturePath('file1.yaml');
-  const json2 = getFixturePath('file2.yml');
+  const json1 = getFixturePath('file3.yaml');
+  const json2 = getFixturePath('file4.yml');
   expect(gendiff(json1, json2, 'plain')).toEqual(result3);
 });
