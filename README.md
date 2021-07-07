@@ -12,3 +12,6 @@
 
 ##### recursive test
 [![asciicast](https://asciinema.org/a/424043.svg)](https://asciinema.org/a/424043)
+
+##### test plain type
+[![asciicast](https://asciinema.org/a/424218.svg)](https://asciinema.org/a/424218)
