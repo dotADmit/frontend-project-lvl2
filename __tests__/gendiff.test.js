@@ -15,6 +15,7 @@ const yml4 = getFixturePath('file4.yml');
 
 const resultPlain = readFileSync(getFixturePath('resultPlain'), 'utf8');
 const resultStylish = readFileSync(getFixturePath('resultStylish'), 'utf8');
+const resultJson = readFileSync(getFixturePath('resultJson'), 'utf8');
 
 test('recursive work json', () => {
   expect(gendiff(json3, json4)).toEqual(resultStylish);
@@ -26,4 +27,8 @@ test('recursive work yml', () => {
 
 test('type plain work', () => {
   expect(gendiff(yml3, yml4, 'plain')).toEqual(resultPlain);
+});
+
+test('type json work', () => {
+  expect(gendiff(yml3, yml4, 'json')).toEqual(resultJson);
 });

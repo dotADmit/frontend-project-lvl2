@@ -1,6 +1,6 @@
-import parser from '../parsers.js';
+import parse from '../parsers.js';
 
 export default () => {
-  const settings = parser('./package.json', 'utf8');
+  const settings = parse('./package.json', 'utf8');
   return settings.version;
 };
