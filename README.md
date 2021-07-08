@@ -15,3 +15,6 @@
 
 ##### test plain type
 [![asciicast](https://asciinema.org/a/424218.svg)](https://asciinema.org/a/424218)
+
+##### test json type
+[![asciicast](https://asciinema.org/a/424437.svg)](https://asciinema.org/a/424437)
